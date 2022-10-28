@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/musicInfoLayer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="17dp">
+
+    <ImageView
+        android:id="@+id/ivMusicImg"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@drawable/custom_box"
+        android:src="@drawable/test_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivMusicImg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvMusicTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오후에 잠을 깨워줄 목소리"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMusicSinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="나른한 오후"
+            android:textColor="#333333"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMusicTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMusicSinger">
+
+            <TextView
+                android:id="@+id/tvMember"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/list_ico_member"
+                android:drawablePadding="4dp"
+                android:text="756"
+                android:textColor="#989898"
+                android:textSize="11dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHeart"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/list_ico_heart"
+                android:drawablePadding="4dp"
+                android:text="1,641"
+                android:textColor="#989898"
+                android:textSize="11dp"
+                app:layout_constraintStart_toEndOf="@id/tvMember"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvJewel"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/list_ico_jewel"
+                android:drawablePadding="4dp"
+                android:text="240"
+                android:textColor="#989898"
+                android:textSize="11dp"
+                app:layout_constraintStart_toEndOf="@id/tvHeart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMusicTime"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/list_ico_listen"
+                android:drawablePadding="4dp"
+                android:text="23분"
+                android:textColor="#989898"
+                android:textSize="11dp"
+                app:layout_constraintStart_toEndOf="@id/tvJewel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

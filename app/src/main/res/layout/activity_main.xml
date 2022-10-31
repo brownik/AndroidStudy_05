@@ -54,11 +54,11 @@
             android:id="@+id/tvMusicCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
             android:text="5"
             android:textColor="#ff3382"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:layout_marginStart="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvEtc"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,8 +73,8 @@
         android:orientation="vertical"
         android:paddingStart="20dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/floatingBar"
         app:layout_constraintTop_toBottomOf="@id/musicCountLayer"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:itemCount="5"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
@@ -87,12 +87,23 @@
         android:background="#262626"
         app:layout_constraintTop_toBottomOf="parent">
 
-        <FrameLayout
-            android:id="@+id/flPlayingBar"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/seekBarLayer"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#e2e2e2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <SeekBar
+                android:id="@+id/flSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:background="@drawable/seek_bar"
+                android:progress="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <ImageView
             android:id="@+id/ivPlayingImg"
@@ -103,7 +114,7 @@
             android:src="@drawable/test_img"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/flPlayingBar" />
+            app:layout_constraintTop_toBottomOf="@id/seekBarLayer" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/playingInfoLayer"
@@ -112,15 +123,17 @@
             android:layout_marginStart="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivPlayingImg"
-            app:layout_constraintTop_toBottomOf="@id/flPlayingBar">
+            app:layout_constraintTop_toBottomOf="@id/seekBarLayer">
 
             <FrameLayout
                 android:id="@+id/flPlayingLottie"
-                android:layout_width="15dp"
-                android:layout_height="11dp"
-                android:paddingEnd="4dp"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="11dp"
+                android:layout_height="12dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/tvPlayingTitle"
@@ -186,7 +199,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

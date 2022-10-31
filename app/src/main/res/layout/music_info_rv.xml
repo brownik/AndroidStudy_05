@@ -92,7 +92,7 @@
 
             <TextView
                 android:id="@+id/tvMusicTime"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:drawableStart="@drawable/list_ico_listen"
